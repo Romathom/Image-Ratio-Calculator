@@ -1,2 +1,2 @@
-# Image Ration Calculator
+# Image Ratio Calculator
  
