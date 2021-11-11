@@ -9,6 +9,10 @@ root = tk.Tk()
 root.title(" Image Ratio Calculator ") #titre de l'application
 root.geometry('500x300+50+10') #taille de la fenetre
 
+#Theme application
+root.tk.call("source", "sun-valley.tcl")
+root.tk.call("set_theme", "dark")
+
 #Ouvrir une image
 def OpenImg():
     root.filename = filedialog.askopenfilename(title="Select An Image", filetypes=(("jpeg files", "*.jpg"), ("gif files", "*.gif*"), ("png files", "*.png"))) #extension supporter
@@ -24,20 +28,20 @@ def OpenImg():
     T.pack()
     T.insert(tk.END, "la hauteur de l'image est de "+str(H)+" pixels\net sa largeur est de "+str(W)+" pixels")
     image_label.pack()
-    T.config(font="calibri, 22")
+    T.config(font="calibri, 14")
 
     info_haut = 0
     info_larg = 0
     info_larg=Entry(root,width= 20,fg="grey")
     info_larg.insert(0,"la largeur voulue", )
-    info_larg.config(font="calibri, 20")
+    info_larg.config(font="calibri, 16")
     info_larg.pack()
     OU = tk.Label(root, text="OU",fg="red")
     OU.config(font=("calibri", 20))
     OU.pack()
     info_haut=Entry(root,width= 20,fg="grey")
     info_haut.insert(0,"la hauteur voulue")
-    info_haut.config(font="calibri, 20")
+    info_haut.config(font="calibri, 16")
     info_haut.pack()
 
 
@@ -48,25 +52,25 @@ def OpenImg():
         if(LARG == 0 or LARG == "la largeur voulue" or LARG=="" and str(H)>str(W)):
             S=H/W
             HAUT2=int(HAUT)
-            result=HAUT2/S
+            result=round(HAUT2/S,1)
             T.delete('1.0', END)
             T.insert(tk.END, "la largeur de votre rendu est de "+str(result)+" centimètres")
         elif(LARG == 0 or LARG == "la largeur voulue" or LARG=="" and str(W)>str(H)):
             S=W/H
             HAUT2=int(HAUT)
-            result=S*HAUT2
+            result=round(S*HAUT2,1)
             T.delete('1.0', END)
             T.insert(tk.END, "la largeur de votre rendu est de "+str(result)+" centimètres")
         elif(HAUT == 0 or HAUT == "la hauteur voulue" or HAUT=="" and str(H)>str(W)):
             S=H/W
             LARG2=int(LARG)
-            result=S*LARG2
+            result=round(S*LARG2,1)
             T.delete('1.0', END)
             T.insert(tk.END, "la hauteur de votre rendu est de "+str(result)+" centimètres")
         elif(HAUT == 0 or HAUT == "la hauteur voulue" or HAUT=="" and str(W)>str(H)):
             S=W/H
             LARG2=int(LARG)
-            result=LARG2/S
+            result=round(LARG2/S,1)
             T.delete('1.0', END)
             T.insert(tk.END, "la hauteur de votre rendu est de "+str(result)+" centimètres")
         else:
