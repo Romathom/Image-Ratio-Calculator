@@ -4,38 +4,40 @@ from tkinter import *
 from tkinter import filedialog
 from PIL import ImageTk,Image
 
+#Lancement de l'application
 root = tk.Tk()
-root.title(" CALCULATOR ")
+root.title(" Image Ratio Calculator ") #titre de l'application
+root.geometry('500x300+50+10') #taille de la fenetre
 
-#S = tk.Scrollbar(root)
-#S.pack(side=tk.RIGHT, fill=tk.Y)
-
-
-def Open():
-    root.filename = filedialog.askopenfilename(title="Select An Image", filetypes=(("jpeg files", "*.jpg"), ("gif files", "*.gif*"), ("png files", "*.png")))
+#Ouvrir une image
+def OpenImg():
+    root.filename = filedialog.askopenfilename(title="Select An Image", filetypes=(("jpeg files", "*.jpg"), ("gif files", "*.gif*"), ("png files", "*.png"))) #extension supporter
     image_label = Label(root, text=root.filename)
 
 
     im= ImageTk.PhotoImage(Image.open(root.filename))
-    Open.h = im.height()
-    Open.w = im.width()
-    H=Open.h
-    W=Open.w
+    OpenImg.h = im.height()
+    OpenImg.w = im.width()
+    H=OpenImg.h
+    W=OpenImg.w
     T = tk.Text(root, height=2, width=50)
     T.pack()
     T.insert(tk.END, "la hauteur de l'image est de "+str(H)+" pixels\net sa largeur est de "+str(W)+" pixels")
     image_label.pack()
+    T.config(font="calibri, 22")
 
     info_haut = 0
     info_larg = 0
     info_larg=Entry(root,width= 20,fg="grey")
     info_larg.insert(0,"la largeur voulue", )
+    info_larg.config(font="calibri, 20")
     info_larg.pack()
     OU = tk.Label(root, text="OU",fg="red")
-    OU.config(font=("Helvetica", 22))
+    OU.config(font=("calibri", 20))
     OU.pack()
     info_haut=Entry(root,width= 20,fg="grey")
     info_haut.insert(0,"la hauteur voulue")
+    info_haut.config(font="calibri, 20")
     info_haut.pack()
 
 
@@ -75,11 +77,7 @@ def Open():
     bouton.pack()
 
 
-button =Button(root, text='Open', command=Open)
+button =Button(root, text='Ouvrir une image', command=OpenImg)
 button.pack()
-
-
-
-
 
 root.mainloop()
