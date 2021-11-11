@@ -2,7 +2,7 @@
  
 Cette application sert à trouver la taille en cm d'une image numérique.
 
-## COmment utiliser ?##
+## Comment utiliser ?
 
 - Télécharger l'application : [lien]
 - Excuter l'application
