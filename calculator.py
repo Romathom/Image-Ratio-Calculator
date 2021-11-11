@@ -9,10 +9,6 @@ root = tk.Tk()
 root.title(" Image Ratio Calculator ") #titre de l'application
 root.geometry('500x300+50+10') #taille de la fenetre
 
-#Theme application
-root.tk.call("source", "sun-valley.tcl")
-root.tk.call("set_theme", "dark")
-
 #Ouvrir une image
 def OpenImg():
     root.filename = filedialog.askopenfilename(title="Select An Image", filetypes=(("jpeg files", "*.jpg"), ("gif files", "*.gif*"), ("png files", "*.png"))) #extension supporter
@@ -26,7 +22,7 @@ def OpenImg():
     W=OpenImg.w
     T = tk.Text(root, height=2, width=50)
     T.pack()
-    T.insert(tk.END, "la hauteur de l'image est de "+str(H)+" pixels\net sa largeur est de "+str(W)+" pixels")
+    T.insert(tk.END, "Hauteur : "+str(H)+" pixels\nLargeur : "+str(W)+" pixels")
     image_label.pack()
     T.config(font="calibri, 14")
 
@@ -54,25 +50,25 @@ def OpenImg():
             HAUT2=int(HAUT)
             result=round(HAUT2/S,1)
             T.delete('1.0', END)
-            T.insert(tk.END, "la largeur de votre rendu est de "+str(result)+" centimètres")
+            T.insert(tk.END, "la largeur de votre rendu est de : "+str(result)+" cm")
         elif(LARG == 0 or LARG == "la largeur voulue" or LARG=="" and str(W)>str(H)):
             S=W/H
             HAUT2=int(HAUT)
             result=round(S*HAUT2,1)
             T.delete('1.0', END)
-            T.insert(tk.END, "la largeur de votre rendu est de "+str(result)+" centimètres")
+            T.insert(tk.END, "La largeur de votre rendu est de : "+str(result)+" cm")
         elif(HAUT == 0 or HAUT == "la hauteur voulue" or HAUT=="" and str(H)>str(W)):
             S=H/W
             LARG2=int(LARG)
             result=round(S*LARG2,1)
             T.delete('1.0', END)
-            T.insert(tk.END, "la hauteur de votre rendu est de "+str(result)+" centimètres")
+            T.insert(tk.END, "La hauteur de votre rendu est de : "+str(result)+" cm")
         elif(HAUT == 0 or HAUT == "la hauteur voulue" or HAUT=="" and str(W)>str(H)):
             S=W/H
             LARG2=int(LARG)
             result=round(LARG2/S,1)
             T.delete('1.0', END)
-            T.insert(tk.END, "la hauteur de votre rendu est de "+str(result)+" centimètres")
+            T.insert(tk.END, "La hauteur de votre rendu est de : "+str(result)+" cm")
         else:
             T.delete('1.0', END)
             T.insert(tk.END, "Une erreur s'est produite veuillez redémarrer l'application")
