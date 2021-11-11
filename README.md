@@ -9,7 +9,3 @@ Cette application sert à trouver la taille en cm d'une image numérique.
 - Ouvrez une image
 - Indiquez la dimension que vous avez (hauteur ou largeur)
 - Le résultat seras indiqué dans la boîte de texte
-
-### Contribution
-
-[Thèmes de l'application](https://github.com/rdbende/Sun-Valley-ttk-theme)
