@@ -4,7 +4,7 @@ Cette application sert à trouver la taille en cm d'une image numérique.
 
 ## Comment utiliser ?
 
-- Télécharger l'application : [Télécharger Image Ratio Calculator](https://drive.google.com/drive/folders/1GeH1rHjiE_26vktprWKCgvnVTuBosrFf)
+- [Télécharger Image Ratio Calculator](https://github.com/Romathom/Image-Ratio-Calculator/blob/main/dist/ImageRatioCalculator.exe)
 - Executer l'application
 - Ouvrez une image
 - Indiquez la dimension que vous avez (hauteur ou largeur)
